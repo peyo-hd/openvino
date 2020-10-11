@@ -7,7 +7,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <sys/timeb.h>
+#include <string.h>
+//#include <sys/timeb.h>
 #include <errno.h>
 #include <assert.h>
 

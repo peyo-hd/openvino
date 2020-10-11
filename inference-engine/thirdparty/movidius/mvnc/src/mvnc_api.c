@@ -10,6 +10,7 @@
 #include <fcntl.h>
 #include <time.h>
 #include <sys/types.h>
+#include <pthread.h>
 #if (defined(_WIN32) || defined(_WIN64))
 #include "gettime.h"
 #include <windows.h>    // for Sleep()
@@ -1186,7 +1187,7 @@ static void printfOverXLinkClose(struct _devicePrivate_t *d) {
     }
 
     if(d->printf_over_xlink_thr_valid) {
-        pthread_cancel(d->printf_over_xlink_thr);
+        //pthread_cancel(d->printf_over_xlink_thr);
         d->printf_over_xlink_thr_valid = 0;
     }
 

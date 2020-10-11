@@ -24,11 +24,11 @@ namespace gapi {
 namespace kernels {
 
 template<typename DST, typename SRC> static inline DST saturate_cast(SRC x);
-template<> inline short saturate_cast(int x) { return (std::min)(SHRT_MAX, (std::max)(SHRT_MIN, x)); }
+template<> inline short saturate_cast(int x) { return (std::min<short>)(SHRT_MAX, (std::max)(SHRT_MIN, x)); }
 template<> inline short saturate_cast(float x) { return saturate_cast<short>(static_cast<int>(std::rint(x))); }
 template<> inline float saturate_cast(float x) { return x; }
 template<> inline short saturate_cast(short x) { return x; }
-template<> inline uint16_t saturate_cast(int x) { return (std::min)(USHRT_MAX, (std::max)(0, x)); }
+template<> inline uint16_t saturate_cast(int x) { return (std::min<uint16_t>)(USHRT_MAX, (std::max)(0, x)); }
 
 //------------------------------------------------------------------------------
 
